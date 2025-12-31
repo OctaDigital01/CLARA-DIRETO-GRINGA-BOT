@@ -1,0 +1,5 @@
+python-dotenv>=1.0,<2.0
+# business_connection_id em metodos de envio/reply foi adicionado nas versoes 21.x mais recentes
+# Exigir uma versao minima que suporte Business (reply_* com business_connection_id)
+python-telegram-bot[job-queue]>=21.7,<22.0
+aiohttp>=3.9,<4.0
