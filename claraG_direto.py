@@ -352,7 +352,7 @@ AUTO_REPLY_DELAY_SECONDS = 30
 VIP_OFFER_DELAY_SECONDS = 180
 GROUP_CHECK_INTERVAL_SECONDS = 60
 GROUP_CHECK_MAX_ATTEMPTS = 5
-GROUP_APPROVED_MESSAGE = "Te aceitei no grupo, espero que goste"
+GROUP_APPROVED_MESSAGE = "I accepted you into the group, I hope you like it."
 
 
 async def _combo_delivery_beatriz_job(context: ContextTypes.DEFAULT_TYPE) -> None:
