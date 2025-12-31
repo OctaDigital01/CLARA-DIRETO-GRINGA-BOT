@@ -370,7 +370,7 @@ async def _combo_delivery_beatriz_job(context: ContextTypes.DEFAULT_TYPE) -> Non
         bot,
         chat_id=chat_id,
         user_id=user_id,
-        text="oiie desculpa a demora, vou manda",
+        text="Hi, sorry for the delay. I'll send everything",
         business_connection_id=bcid,
     )
     if AUDIO_ENTREGA_COMBO:
@@ -493,15 +493,14 @@ async def _upsell_sequence_job(context: ContextTypes.DEFAULT_TYPE) -> None:
             business_connection_id=bcid,
         )
     upsell_text = (
-        "Olha essa préviazinha que te mandei 🥰\n"
-        "Meu bem, o que você quer mesmo tá dentro do meu VIP, olha tudinho que você pode ver:\n\n"
-        "✨ Vídeos e fotos do jeitinho que você gosta...\n"
-        "✨ Videos exclusivo pra você, te fazendo go.zar só eu e você\n"
-        "✨ Meu contato pessoal\n"
-        "✨ Sempre posto coisa nova\n"
-        "✨ Chamada de vídeo só nós 2\n"
-        "✨ E muito mais meu bem...\n\n"
-        "Agora escolhe uma opção do VIP pra tu me ver da melhor forma e goz.ar goostoso pra mim 🥹💦"
+        "Look at this little preview I sent you 🥰\n"
+        "Babe, what you really want is inside my VIP, look at everything you can see:\n\n"
+        "💎 Videos and photos just the way you like them...\n"
+        "💎 Exclusive videos for you, making you cum just the two of us\n"
+        "💎 My personal contact\n"
+        "💎 I always post new things\n"
+        "💎 And much more my dear...\n\n"
+        "Now choose a VIP option so you can see me in the best way and cumming for me 💦"
     )
     await _safe_send_message(
         bot,
@@ -512,16 +511,16 @@ async def _upsell_sequence_job(context: ContextTypes.DEFAULT_TYPE) -> None:
     )
     vip_keyboard = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("VIP 1 MÊS", url=VIP_LINK_1_MES)],
-            [InlineKeyboardButton("VIP 6 MESES", url=VIP_LINK_6_MESES)],
-            [InlineKeyboardButton("VIP 1 ANO", url=VIP_LINK_1_ANO)],
+            [InlineKeyboardButton("[$10]1 MONTH🔥", url=VIP_LINK_1_MES)],
+            [InlineKeyboardButton("[$17]6 MONTHS+SURPRISE👀🔥", url=VIP_LINK_6_MESES)],
+            [InlineKeyboardButton("[$20]1 YEAR+EXCLUSIVE VIDEO+🎁", url=VIP_LINK_1_ANO)],
         ]
     )
     await _safe_send_message(
         bot,
         chat_id=chat_id,
         user_id=user_id,
-        text="Escolhe seu VIP aqui embaixo 👇",
+        text="Choose your VIP below 👇",
         reply_markup=vip_keyboard,
         business_connection_id=bcid,
     )
@@ -557,10 +556,10 @@ async def _send_remarketing(
             business_connection_id=business_connection_id,
         )
     desc_text = (
-        "Pronto meu bem, já apliquei o desconto pra ti 😘\n"
-        "Tem que aproveitar agora que depois vou apagar essa mensagem, só clica aqui 👇"
+        "Okay babe, I've already applied the discount for you 😘\n"
+        "Take advantage now, because I'll delete this message later, just click here 👇"
     )
-    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("EU QUERO", url=EU_QUERO_LINK)]])
+    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("I WANT THIS 🔥", url=EU_QUERO_LINK)]])
     await _safe_send_message(
         bot,
         chat_id=chat_id,
@@ -668,7 +667,7 @@ async def handle_text_message(update: Update, context: ContextTypes.DEFAULT_TYPE
     job_queue = getattr(context, "job_queue", None)
     if not job_queue:
         await asyncio.sleep(AUTO_REPLY_DELAY_SECONDS)
-        await _safe_reply_text(message, text="oiiie, desculpa a demora já vou manda")
+        await _safe_reply_text(message, text="Hi, sorry for the delay. I'll send everything.")
         return
     job_queue.run_once(
         _combo_delivery_beatriz_job,
